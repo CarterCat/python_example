@@ -1,5 +1,6 @@
 import json
 
+
 class Foo(object):
     a = 1
 
