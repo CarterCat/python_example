@@ -1,4 +1,4 @@
-# case 1
+# case 1: simple
 
 
 def d(f):
@@ -16,7 +16,7 @@ def f():
 
 f()
 
-# case 2
+# case 2: function with args
 
 
 def d(f):
@@ -34,10 +34,10 @@ def f(a):
 
 f(1)
 
-# case 3
+# case 3: decorator with args
 
 
-def dd(b):
+def dd(b=1):
     def d(f):
         def ff(a):
             print("ff")
@@ -57,7 +57,16 @@ def f(a):
 
 f(1)
 
-# case 4
+
+@dd()
+def f(a):
+    return a
+
+
+f(1)
+
+
+# case 4: decorator instance method
 
 
 def d(f):
@@ -76,7 +85,7 @@ class A:
 
 A().f()
 
-## case 5
+## case 5: decorate instance method with args
 
 
 def d(f):
@@ -95,7 +104,7 @@ class A:
 
 A().f(1)
 
-## case 6
+## case 6: decorate with args for instance method
 
 
 def dd(b):
