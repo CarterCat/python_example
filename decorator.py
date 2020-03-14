@@ -1,3 +1,8 @@
+# decorator
+
+# use for: log, cache, assert, etc...
+
+
 # case 1: simple
 
 
@@ -104,7 +109,7 @@ class A:
 
 A().f(1)
 
-## case 6: decorate with args for instance method
+# case 6: decorate with args for instance method
 
 
 def dd(b):
@@ -125,3 +130,73 @@ class A:
 
 
 A().f(1)
+
+
+# logger
+
+import logging
+
+def use_logging(func):
+
+    def wrapper(*args, **kwargs):
+        logging.warn("%s is running" % func.__name__)
+        return func(*args, **kwargs)
+    return wrapper
+
+@use_logging
+def foo():
+    print("i am foo")
+
+foo()
+
+
+## 
+
+def use_logging(level):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if level == "warn":
+                logging.warn("%s is running" % func.__name__)
+            elif level == "info":
+                logging.info("%s is running" % func.__name__)
+            return func(*args)
+        return wrapper
+
+    return decorator
+
+@use_logging(level="warn")
+def foo(name='foo'):
+    print("i am %s" % name)
+
+foo()
+
+
+##
+
+
+def error_log(logger):
+    def wrapper(func):
+        def wrapper(*args, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                logger.error(f"{args[0].__class__.__name__}:{func.__name__}(error={e})", exc_info=True)
+        return wrapper
+    return wrapper
+
+
+# # example
+# import logging 
+
+# logger = logging.getLogger("auction.%s" % __name__)
+
+# class A:
+#     @error_log(logger)
+#     def foo(self, a,b):
+#         1/0
+#         return a+b
+
+# A().foo(1,2)
+
+
+
