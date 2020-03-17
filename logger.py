@@ -40,3 +40,12 @@ def logit(logger, start=False, error=False, timeit=False, prefix=""):
 
 
 
+
+
+#### 
+
+# todo
+
+# - learn logging
+# - logger
+# - handler
