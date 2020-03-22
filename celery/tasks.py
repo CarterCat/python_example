@@ -1,6 +1,9 @@
 # celery beat -A tasks
 # celery worker -A tasks --loglevel=info
 
+# 结论：
+# celery 基于 redis 的定时队列，
+# 当开启多个worker时，也是轮流消费队列中的任务
 
 from celery import Celery
 from celery.schedules import crontab
@@ -19,9 +22,14 @@ app.conf.beat_schedule = {
     #     'schedule': 5.0,
     #     'args': ("foo",)
     # },
-    'ccc': {
-        'task': 'tasks.test2',
-        'schedule': 0.1,
+    # 'ccc': {
+    #     'task': 'tasks.test2',
+    #     'schedule': 0.1,
+    #     'args': ()
+    # },
+    'ddd': {
+        'task': 'tasks.test3',
+        'schedule': 5,
         'args': ()
     }
 }
@@ -40,3 +48,11 @@ import time
 @app.task
 def test2():
     print(time.time())
+
+
+
+@app.task
+def test3():
+    print("start")
+    print(time.time())
+    print("end")

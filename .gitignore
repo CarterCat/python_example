@@ -1,3 +1,5 @@
 
 
 venv/
+celery/__pycache__/
+celery/celerybeat-schedule
