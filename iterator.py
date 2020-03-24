@@ -11,9 +11,8 @@
 # `iter()` function => call `__iter__()` method -> return iterator
 
 # `next()` function => call `__next__()` method -> return next item
- 
-# when reach the end, it will raise `StopIteration`.
 
+# when reach the end, it will raise `StopIteration`.
 
 
 # where?
@@ -24,26 +23,26 @@
 
 # - generator
 
-a = [1,2,3,4,5]
+a = [1, 2, 3, 4, 5]
 
 i = iter(a)
 
-a1 = next(i) # 1
+a1 = next(i)  # 1
 
-a2 = next(i) # 2
+a2 = next(i)  # 2
 
 print(f"a1={a1},a2={a2}")
 
 # for
 
-a = [1,2,3,4,5]
+a = [1, 2, 3, 4, 5]
 
 for e in a:
     print(e)
 
 # impl for
 
-a = [1,2,3,4,5]
+a = [1, 2, 3, 4, 5]
 
 i = iter(a)
 
@@ -62,12 +61,15 @@ while True:
 
 # own iterator
 
+
 class A:
     def __init__(self, max=0):
         self.max = max
+
     def __iter__(self):
         self.n = 0
         return self
+
     def __next__(self):
         if self.n <= self.max:
             result = 2 * self.n
@@ -76,10 +78,11 @@ class A:
         else:
             raise StopIteration
 
+
 a = A(5)
 i = iter(a)
 for e in i:
-  print(e)
+    print(e)
 
 # 0
 # 2
@@ -87,7 +90,3 @@ for e in i:
 # 6
 # 8
 # 10
-
-
-
-

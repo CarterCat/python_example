@@ -136,21 +136,25 @@ A().f(1)
 
 import logging
 
-def use_logging(func):
 
+def use_logging(func):
     def wrapper(*args, **kwargs):
         logging.warn("%s is running" % func.__name__)
         return func(*args, **kwargs)
+
     return wrapper
+
 
 @use_logging
 def foo():
     print("i am foo")
 
+
 foo()
 
 
-## 
+##
+
 
 def use_logging(level):
     def decorator(func):
@@ -160,13 +164,16 @@ def use_logging(level):
             elif level == "info":
                 logging.info("%s is running" % func.__name__)
             return func(*args)
+
         return wrapper
 
     return decorator
 
+
 @use_logging(level="warn")
-def foo(name='foo'):
+def foo(name="foo"):
     print("i am %s" % name)
+
 
 foo()
 
@@ -180,13 +187,18 @@ def error_log(logger):
             try:
                 return func(*args, **kwargs)
             except Exception as e:
-                logger.error(f"{args[0].__class__.__name__}:{func.__name__}(error={e})", exc_info=True)
+                logger.error(
+                    f"{args[0].__class__.__name__}:{func.__name__}(error={e})",
+                    exc_info=True,
+                )
+
         return wrapper
+
     return wrapper
 
 
 # # example
-# import logging 
+# import logging
 
 # logger = logging.getLogger("auction.%s" % __name__)
 
@@ -197,8 +209,6 @@ def error_log(logger):
 #         return a+b
 
 # A().foo(1,2)
-
-
 
 
 ## TODO=class decorator

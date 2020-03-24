@@ -27,11 +27,7 @@ app.conf.beat_schedule = {
     #     'schedule': 0.1,
     #     'args': ()
     # },
-    'ddd': {
-        'task': 'tasks.test3',
-        'schedule': 5,
-        'args': ()
-    }
+    "ddd": {"task": "tasks.test3", "schedule": 5, "args": ()}
 }
 
 # @app.on_after_configure.connect
@@ -39,16 +35,18 @@ app.conf.beat_schedule = {
 #     sender.add_periodic_task(1.0, test.s(), name='add every 10')
 #     sender.add_periodic_task(5.0, test.s(), expires=10)
 
+
 @app.task
 def test(a):
     print(a)
 
+
 import time
+
 
 @app.task
 def test2():
     print(time.time())
-
 
 
 @app.task

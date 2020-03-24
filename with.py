@@ -1,6 +1,3 @@
-
-
-
 # context management protocol
 
 # __enter__(), __exit__()
@@ -13,8 +10,6 @@
 
 
 class A:
-
-
     def __init__(self):
         self.x = 1
         self.y = 2
@@ -32,27 +27,27 @@ class A:
 #     print(x)
 
 
-
 class DummyResource:
     def __init__(self, tag):
         self.tag = tag
-        print('Resource [%s]' % tag)
+        print("Resource [%s]" % tag)
+
     def __enter__(self):
-        print('[Enter %s]: Allocate resource.' % self.tag)
-        return self   # 可以返回不同的对象
+        print("[Enter %s]: Allocate resource." % self.tag)
+        return self  # 可以返回不同的对象
+
     def __exit__(self, exc_type, exc_value, exc_tb):
-        print('[Exit %s]: Free resource.' % self.tag)
+        print("[Exit %s]: Free resource." % self.tag)
         if exc_tb is None:
-            print('[Exit %s]: Exited without exception.' % self.tag)
+            print("[Exit %s]: Exited without exception." % self.tag)
         else:
-            print('[Exit %s]: Exited with exception raised.' % self.tag)
-            return False   # 可以省略，缺省的None也是被看做是False
+            print("[Exit %s]: Exited with exception raised." % self.tag)
+            return False  # 可以省略，缺省的None也是被看做是False
 
 
+with DummyResource("Normal"):
+    print("[with-body] Run without exceptions.")
 
-with DummyResource('Normal'):
-    print('[with-body] Run without exceptions.')
- 
 # with DummyResource('With-Exception'):
 #     print('[with-body] Run with exception.')
 #     raise Exception

@@ -1,11 +1,13 @@
-
 import time
+
 
 def logit(logger, start=False, error=False, timeit=False, prefix=""):
     def outer(func):
         def inner(*args, **kwargs):
             if start:
-                logger.info(f"{prefix}:{func.__name__}:start:args:{args}:kwargs:{kwargs}")
+                logger.info(
+                    f"{prefix}:{func.__name__}:start:args:{args}:kwargs:{kwargs}"
+                )
             ts = time.time()
             result = None
             if error:
@@ -19,7 +21,9 @@ def logit(logger, start=False, error=False, timeit=False, prefix=""):
             if timeit:
                 logger.warning(f"{prefix}:{func.__name__}:timeit:{(te - ts) * 1000}")
             return result
+
         return inner
+
     return outer
 
 
@@ -39,10 +43,7 @@ def logit(logger, start=False, error=False, timeit=False, prefix=""):
 #     return a + b + c
 
 
-
-
-
-#### 
+####
 
 # todo
 
