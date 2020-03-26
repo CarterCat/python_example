@@ -93,10 +93,9 @@ for e in i:
 
 ##
 
-l = [1,2,3,4,5]
+l = [1, 2, 3, 4, 5]
 
 i = iter(l)
 
 for e in i:
     print(e)
-    
