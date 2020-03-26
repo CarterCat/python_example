@@ -90,3 +90,13 @@ for e in i:
 # 6
 # 8
 # 10
+
+##
+
+l = [1,2,3,4,5]
+
+i = iter(l)
+
+for e in i:
+    print(e)
+    
