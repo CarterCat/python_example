@@ -1,6 +1,14 @@
 # generator
 
-# why? a simple way of creating iterators.
+# why?
+
+# 1 easy to implement (a simple way of creating iterators)
+
+# 2 memory efficient (lazy load)
+
+# 3 represent infinite stream
+
+# 4 pipeline
 
 # what?  a function that returns an object (iterator)
 
