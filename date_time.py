@@ -1,5 +1,4 @@
-
-## 
+##
 
 from datetime import datetime
 
@@ -9,13 +8,21 @@ dt = datetime.utcnow()
 
 f"{dt.year}-{dt.month}-{dt.day}"
 
-dt.timestamp()
+ts = dt.timestamp()
 
-## 
+datetime.fromtimestamp(ts)
+
+datetime.utcfromtimestamp(ts)
+
+##
 
 from datetime import timedelta
 
-## 
+dt = datetime.now()
+
+dt + timedelta(days=1, hours=12)
+
+##
 
 import time
 
