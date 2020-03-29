@@ -8,30 +8,38 @@
 
 # 3 decorator
 
-## 
+##
+
 
 def f(msg):
     def ff():
         print(msg)
+
     ff()
+
 
 f("foo")
 
 ##
 
+
 def f(msg):
     def ff():
         print(msg)
+
     return ff
+
 
 ff = f("foo")
 ff()
 
 ##
 
+
 def f(a):
     def ff(b):
         print(a + b)
+
     return ff
 
 

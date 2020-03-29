@@ -1,11 +1,14 @@
 class B(Exception):
     pass
 
+
 class C(B):
     pass
 
+
 class D(C):
     pass
+
 
 for cls in [B, C, D]:
     try:
@@ -21,8 +24,10 @@ for cls in [B, C, D]:
 class A:
     class Aaa(Exception):
         pass
+
     def f(self):
         raise A.Aaa()
+
 
 try:
     a = A()
