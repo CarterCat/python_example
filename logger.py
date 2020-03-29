@@ -50,3 +50,37 @@ def logit(logger, start=False, error=False, timeit=False, prefix=""):
 # - learn logging
 # - logger
 # - handler
+
+##
+
+logging
+
+import logging
+
+logger = logging.getLogger(name)
+
+handler = logging.FileHandler(filename.log)
+
+handler = logging.StreamHandler()
+
+formatter = logging.Formatter(format)
+
+handler.setFormatter(formatter)
+
+logger.addHandler(handler)
+
+logger.setLevel(level)
+
+handler.setLevel(level)
+
+logger.info("message")
+
+# debugger
+
+# import logging
+
+# logging.basicConfig(level=logging.INFO)
+
+# logging level: debug, info, warning, error
+
+
