@@ -2,7 +2,7 @@
 
 try:
     print("a")
-    raise(Exception("e"))
+    raise (Exception("e"))
     print("x")
 except Exception as e:
     print("b")
@@ -11,6 +11,7 @@ finally:
     print("c")
 
 ##
+
 
 class B(Exception):
     pass
@@ -48,6 +49,3 @@ try:
     a.f()
 except A.Aaa as e:
     print("catch")
-
-
-
