@@ -174,8 +174,18 @@ b = ["a", "b", "c"]
 
 (e for e in range(0, 5))
 
+#
 
-## itertools
+x = map(lambda e: e * 2, range(5))
+
+x = map(lambda e1, e2: e1 + e2, range(1, 6), range(6, 11))
+
+x = filter(lambda e: e % 2 == 0, range(5))
+
+x = reduce(lambda acc, e: acc - e, range(5))  # ???
+
+
+# itertools
 
 import itertools
 
@@ -213,3 +223,17 @@ for k, g in itertools.groupby("foobar"):
 
 for k, g in itertools.groupby([1, 2, 2, 1]):
     print(k, list(g))
+
+
+# find in batch
+
+x = list(range(11))
+offset = 0
+batch_size = 2
+while offset < len(x):
+    print(x[offset : offset + batch_size])
+    offset += batch_size
+
+x = list(range(11))
+for offset in range(0, len(x), batch_size):
+    print(x[offset : offset + batch_size])
