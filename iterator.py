@@ -173,3 +173,45 @@ b = ["a", "b", "c"]
 # generator
 
 (e for e in range(0, 5))
+
+
+
+
+## itertools
+
+import itertools
+
+counter = itertools.count(1)
+for e in counter:
+    print(e)
+    if e == 5:
+        break
+
+
+count = 1
+cycler = itertools.cycle(range(0,3))
+for e in cycler:
+    print(e)
+    if count == 10:
+        break
+    count += 1
+
+
+repeater = itertools.repeat('foo', 3)
+for e in repeater:
+    print(e)
+
+
+takewhile = itertools.takewhile(lambda e: e < 10, range(0,5))
+for e in takewhile:
+    print(e)
+
+
+for e in itertools.chain(range(0,3), range(3,6)):
+    print(e)
+
+for k,g in itertools.groupby("foobar"):
+    print(k, list(g))
+
+for k,g in itertools.groupby([1,2,2,1]):
+    print(k, list(g))
