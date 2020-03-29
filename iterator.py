@@ -175,8 +175,6 @@ b = ["a", "b", "c"]
 (e for e in range(0, 5))
 
 
-
-
 ## itertools
 
 import itertools
@@ -189,7 +187,7 @@ for e in counter:
 
 
 count = 1
-cycler = itertools.cycle(range(0,3))
+cycler = itertools.cycle(range(0, 3))
 for e in cycler:
     print(e)
     if count == 10:
@@ -197,21 +195,21 @@ for e in cycler:
     count += 1
 
 
-repeater = itertools.repeat('foo', 3)
+repeater = itertools.repeat("foo", 3)
 for e in repeater:
     print(e)
 
 
-takewhile = itertools.takewhile(lambda e: e < 10, range(0,5))
+takewhile = itertools.takewhile(lambda e: e < 10, range(0, 5))
 for e in takewhile:
     print(e)
 
 
-for e in itertools.chain(range(0,3), range(3,6)):
+for e in itertools.chain(range(0, 3), range(3, 6)):
     print(e)
 
-for k,g in itertools.groupby("foobar"):
+for k, g in itertools.groupby("foobar"):
     print(k, list(g))
 
-for k,g in itertools.groupby([1,2,2,1]):
+for k, g in itertools.groupby([1, 2, 2, 1]):
     print(k, list(g))
