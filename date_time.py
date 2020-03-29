@@ -38,7 +38,7 @@ arrow.utcnow()
 
 arrow.get("1991-10-25 11:11:11")
 
-arrow.get('2013-05-11T21:23:58.970460+07:00')
+arrow.get("2013-05-11T21:23:58.970460+07:00")
 
 
 t.shift(hours=-1)
@@ -60,17 +60,17 @@ t.hour
 t.minute
 t.second
 
-t.datetime # -> datetime.datetime
+t.datetime  # -> datetime.datetime
 
-t.date() # -> datetime.date
+t.date()  # -> datetime.date
 
-t.time() # -> datetime.time
+t.time()  # -> datetime.time
 
 t.format()
 
-t.format('YYYY-MM-DD')
+t.format("YYYY-MM-DD")
 
-t.format('YYYY-MM-DD HH:mm:ssZZ')
+t.format("YYYY-MM-DD HH:mm:ssZZ")
 
 t.humanize()
 

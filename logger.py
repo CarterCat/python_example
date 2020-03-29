@@ -82,5 +82,3 @@ logger.info("message")
 # logging.basicConfig(level=logging.INFO)
 
 # logging level: debug, info, warning, error
-
-

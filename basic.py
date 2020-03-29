@@ -54,9 +54,9 @@ a[:-1]
 
 a[::2]
 
-a[::-1] # reverse
+a[::-1]  # reverse
 
-"abc"[::-1] # reverse string
+"abc"[::-1]  # reverse string
 
 b = a[:]
 

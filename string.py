@@ -1,6 +1,4 @@
-
-
-"abc"[::-1] 
+"abc"[::-1]
 
 "abc".upper()
 
@@ -18,7 +16,7 @@
 
 "a,b,c".split(",")
 
-",".join(["a","b","c"])
+",".join(["a", "b", "c"])
 
 for e in "abc":
     print(e)
