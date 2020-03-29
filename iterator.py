@@ -99,3 +99,78 @@ i = iter(l)
 
 for e in i:
     print(e)
+
+
+# for
+
+a = [1,2,3,4,5]
+
+for e in a:
+    print(e)
+
+for i, e in enumerate(a):
+    print(i, e)
+
+a = {"a": 1, "b": 2, "c": 3}
+
+for k in a:
+    print(k)
+
+for k in a.keys():
+    print(k)
+
+
+for k in a:
+    print(a[k])
+
+for v in a.values():
+    print(v)
+
+for (k,v) in a.items():
+    print(k, v)
+
+
+
+a = [1,2,3]
+
+b = ["a","b","c"]
+
+for x,y in zip(a,b):
+    print(x, y)
+
+
+for e in reversed(range(0, 5)):
+    print(e)
+
+for e in range(5, 0, -1):
+    print(e)
+
+
+for e in sorted(range(5, 0, -1)):
+    print(e)
+
+
+# comprehension
+
+[e for e in range(0,5)]
+
+[(e, e+1) for e in range(0,5)]
+
+{(e, e+1) for e in range(0,5)}
+
+{e: e+1 for e in range(0,5)}
+
+a = [1,2,3]
+
+b = ["a","b","c"]
+
+[(x, y) for x,y in zip(a,b)]
+
+{(x, y) for x,y in zip(a,b)}
+
+{x: y for x,y in zip(a,b)}
+
+
+# generator
+
+(e for e in range(0,5))
