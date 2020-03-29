@@ -182,7 +182,9 @@ x = map(lambda e1, e2: e1 + e2, range(1, 6), range(6, 11))
 
 x = filter(lambda e: e % 2 == 0, range(5))
 
-x = reduce(lambda acc, e: acc - e, range(5))  # ???
+from functools import reduce
+
+x = reduce(lambda acc, e: acc - e, range(5))
 
 
 # itertools
